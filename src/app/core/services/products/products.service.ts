@@ -18,6 +18,6 @@ export class ProductsService {
 
   getProduct(id: string){
     return this.productos.find(item => id === item.id);
-
+    //"hola"
   }
 }
