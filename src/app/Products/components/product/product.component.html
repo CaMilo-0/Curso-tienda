@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{zapatos.title | uppercase}}</mat-card-title>
+        <mat-card-subtitle>{{zapatos.precio | currency}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="crop-image">
+        <img [src]="zapatos.image" alt="">
+    </div>
+    <mat-card-actions>
+        <a mat-raised-button [routerLink]="['/products', zapatos.id]">Ver detalles</a>
+        <button (click)="Addcar()" mat-raised-button color="primary">Agregar al carrito</button>
+    </mat-card-actions>
+</mat-card>
+
+
+
+<!-- 
+<h3></h3>
+
+<strong></strong>
+<p>{{ today | date:'medium' }}</p>
+ -->
