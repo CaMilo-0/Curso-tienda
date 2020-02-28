@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Producto } from 'src/app/product.model';
 import { from } from 'rxjs';
 
@@ -12,12 +12,11 @@ export class ProductsService {
     private http: HttpClient
   ) { }
 
-  getAllproducts(){
-    return this.productos;
+  getAllproducts() {
+    return this.http.get<Producto[]>('https://platzi-store.herokuapp.com/products/');
   }
 
-  getProduct(id: string){
-    return this.productos.find(item => id === item.id);
-    //"hola"
+  getProduct(id: string) {
+    return this.http.get<Producto>(`https://platzi-store.herokuapp.com/products/${id}`);
   }
 }
